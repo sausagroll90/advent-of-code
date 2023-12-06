@@ -2,9 +2,7 @@
 
 string[] input = File.ReadAllLines("input.txt");
 
-int valueTotal = 0;
-
-foreach (string line in input)
+int GetLineValue(string line)
 {
     bool first = true;
     char firstDigit = new char();
@@ -19,9 +17,18 @@ foreach (string line in input)
         }
     }
     char[] chars = { firstDigit, lastDigit };
-    string valueLineString = new string(chars);
-    int valueLine = Int32.Parse(valueLineString);
-    valueTotal += valueLine;
+    string lineValueString = new string(chars);
+    int lineValue = Int32.Parse(lineValueString);
+    return lineValue;
 }
 
-Console.WriteLine(valueTotal);
+int GetTotalValue(string[] input)
+{
+    int totalValue = 0;
+    foreach (string line in input) {
+        totalValue += GetLineValue(line);
+    }
+    return totalValue;
+}
+
+Console.WriteLine(GetTotalValue(input));
