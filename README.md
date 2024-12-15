@@ -4,4 +4,5 @@ This repository contains my solutions for the [Advent of Code](https://adventofc
 
 ### Languages:
 
+- 2023: Python
 - 2024: Python
